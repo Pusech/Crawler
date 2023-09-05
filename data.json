@@ -1,0 +1,66 @@
+{
+    "/" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/f\">a</a>tbd<a href=\"https://test.com/v\">v</a></body></html>"
+    },
+    "/f" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/a/h\">deep</a><a href=\"https://test.com/v/d\">deep</a></body></html>"
+    },
+    "/a/h" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/a\">back</a></body></html>"
+    },
+    "/v" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/v/d\">deep</a><a href=\"https://test.com/v/h\">deep broken</a></body></html>"
+    },
+    "/v/d" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/v/e\">back</a><a href=\"https://test.com/v/f\">change</a><a href=\"https://test.com/h\">change</a></body></html>"
+    },
+    "/v/h" : {
+        "status": 404,
+        "content": "<!DOCTYPE html><html><head/><body>Not found</body></html>"
+    },
+    "/v/e" : {
+        "status": 500,
+        "content": "<!DOCTYPE html><html><head /><body>Server error</body></html>"
+    },
+    "/v/e/a" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>end</body></html>"
+    },
+    "/v/e/v" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>end</body></html>"
+    },
+    "/v/f" : {
+        "status": 500,
+        "content": "<!DOCTYPE html><html><head/><body>Server error</body></html>"
+    },
+    "/h" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head /><body>test<a href=\"https://test.com/a\">back a</a><a href=\"https://test.com/v\">back v</a><a href=\"https://test.com/h/v\">deep</a></body></html>"
+    },
+    "/h/v" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head/><body>table<a href=\"https://test.com/h/v/d\">table</a></body></html>"
+    },
+    "/h/v/d" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head/><body><table><tr><th>links</th><th>links</th></tr><tr><td><a href=\"https://test.com/h/v/d/a\">deep</a></td><td><a href=\"https://test.com/h/v/d/v\">deep</a></td></tr><tr><td><a href=\"https://test.com/h/v/d/h\">deep</a></td></tr></table></body></html>"
+    },
+    "/h/v/d/a" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head/><body>not a link<p>https://test/com/e</p></body></html>"
+    },
+    "/h/v/d/v" : {
+        "status": 404,
+        "content": "<!DOCTYPE html><html><head/><body>Not found</body></html>"
+    },
+    "/h/v/d/h" : {
+        "status": 200,
+        "content": "<!DOCTYPE html><html><head/><body>end</body></html>"
+    }
+}
